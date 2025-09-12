@@ -297,14 +297,18 @@ const ChatEngine2 = () => {
             key={msg.id}
             className={`flex p-3 rounded-2xl max-w-3xl${
               msg.type === "ai"
-                ? "bg-gray-800 justify-start"
+                ? "bg-gray-800 justify-start flex-col"
                 : "bg-blue-600 justify-end"
             }`}
           >
-            <div className="text-sm opacity-75">
+            <div
+              className={`text-sm opacity-75 ${
+                msg.type === "ai" ? "flex-row  " : "flex-row-reverse "
+              }`}
+            >
               {msg.type === "ai"
                 ? personas[msg.persona || "builder"]
-                : "👤 You"}
+                : "👤 You "}
             </div>
             <div className="mt-1 whitespace-pre-wrap">{msg.content}</div>
 
@@ -326,7 +330,7 @@ const ChatEngine2 = () => {
             Nemesis AI is typing...
           </div>
         )} */}
-        {isTyping && <TypingIndicator2 />}
+        {isTyping && <TypingIndicator />}
       </div>
       <div className="mt-4 flex">
         <input
