@@ -20,43 +20,43 @@ const intelligentResponses = {
     "Excellent choice! I'll create a **modern React component** with proper hooks, TypeScript interfaces, and performance optimizations. I'll use functional components with `useState` and `useEffect` for clean, maintainable code.",
     "Perfect! I'll build a **reusable React component** following the compound component pattern, with proper prop types, default values, and comprehensive error boundaries for production-ready code.",
   ],
-  
+
   // UI & Design
   ui: [
     "Great idea! I'll design a **beautiful, accessible interface** using semantic HTML, ARIA labels, and our design system tokens. The UI will be responsive across all devices with smooth micro-interactions.",
     "I'll create an **intuitive user interface** with proper focus management, keyboard navigation, and visual feedback. Every element will follow modern UX principles for delightful user experiences.",
   ],
-  
+
   // Animations & Interactions
   animation: [
     "Fantastic! I'll implement **smooth, performant animations** using CSS transforms and the Web Animations API. I'll ensure 60fps performance with GPU acceleration and respect users' motion preferences.",
     "Perfect timing! I'll add **engaging micro-interactions** with spring animations, easing functions, and stagger effects. The animations will enhance usability while maintaining performance.",
   ],
-  
+
   // API & Data
   api: [
     "Smart approach! I'll build **robust API integration** with proper error handling, retry logic, and TypeScript types. I'll implement loading states, caching strategies, and optimistic updates for smooth UX.",
     "Excellent! I'll create a **comprehensive data layer** with React Query for caching, background updates, and offline support. The API calls will be type-safe with proper error boundaries.",
   ],
-  
+
   // Forms & Validation
   forms: [
     "I'll build a **powerful form system** with React Hook Form, Zod validation, and real-time error feedback. The forms will be accessible, performant, and provide excellent user experience.",
     "Perfect! I'll create **intelligent form validation** with custom rules, async validation, and progressive enhancement. Users will get instant feedback with clear, helpful error messages.",
   ],
-  
+
   // Performance & Optimization
   performance: [
     "Great focus! I'll optimize for **peak performance** using lazy loading, code splitting, and memoization. I'll implement virtual scrolling, image optimization, and bundle analysis for lightning-fast experiences.",
     "Excellent priority! I'll build with **performance-first mindset** using React.memo, useMemo, and useCallback strategically. Every component will be optimized for minimal re-renders and fast interactions.",
   ],
-  
+
   // Security & Best Practices
   security: [
     "Smart thinking! I'll implement **enterprise-grade security** with input sanitization, CSP headers, and secure authentication flows. Every endpoint will be protected with proper validation and rate limiting.",
     "Perfect! I'll build **secure, production-ready code** following OWASP guidelines with XSS protection, CSRF tokens, and encrypted data handling. Security will be baked into every layer.",
   ],
-  
+
   // State Management
   state: [
     "Excellent architecture choice! I'll implement **intelligent state management** using Context API with useReducer for complex state, or Zustand for global state. The data flow will be predictable and debuggable.",
@@ -75,7 +75,8 @@ const ChatInterface = () => {
     {
       id: "1",
       type: "ai",
-      content: "✨ Hello! I'm your **intelligent AI coding assistant** with deep expertise in modern web development. I can architect solutions, optimize performance, implement security best practices, and create beautiful user experiences. What challenging project shall we tackle together?",
+      content:
+        "✨ Hello! I'm your **intelligent AI coding assistant** with deep expertise in modern web development. I can architect solutions, optimize performance, implement security best practices, and create beautiful user experiences. What challenging project shall we tackle together?",
       timestamp: new Date(),
     },
   ]);
@@ -84,31 +85,47 @@ const ChatInterface = () => {
 
   const getIntelligentResponse = (userInput: string) => {
     const input = userInput.toLowerCase();
-    
+
     // Advanced keyword matching with context awareness
     if (input.match(/(component|react|jsx|tsx|hook)/)) {
-      return intelligentResponses.react[Math.floor(Math.random() * intelligentResponses.react.length)];
+      return intelligentResponses.react[
+        Math.floor(Math.random() * intelligentResponses.react.length)
+      ];
     }
     if (input.match(/(ui|interface|design|layout|button|card|modal)/)) {
-      return intelligentResponses.ui[Math.floor(Math.random() * intelligentResponses.ui.length)];
+      return intelligentResponses.ui[
+        Math.floor(Math.random() * intelligentResponses.ui.length)
+      ];
     }
     if (input.match(/(animat|transition|motion|spring|gsap|framer)/)) {
-      return intelligentResponses.animation[Math.floor(Math.random() * intelligentResponses.animation.length)];
+      return intelligentResponses.animation[
+        Math.floor(Math.random() * intelligentResponses.animation.length)
+      ];
     }
     if (input.match(/(api|fetch|axios|request|endpoint|graphql|rest)/)) {
-      return intelligentResponses.api[Math.floor(Math.random() * intelligentResponses.api.length)];
+      return intelligentResponses.api[
+        Math.floor(Math.random() * intelligentResponses.api.length)
+      ];
     }
     if (input.match(/(form|input|validat|submit|field|schema)/)) {
-      return intelligentResponses.forms[Math.floor(Math.random() * intelligentResponses.forms.length)];
+      return intelligentResponses.forms[
+        Math.floor(Math.random() * intelligentResponses.forms.length)
+      ];
     }
     if (input.match(/(performance|optimi|speed|bundle|lazy|memo)/)) {
-      return intelligentResponses.performance[Math.floor(Math.random() * intelligentResponses.performance.length)];
+      return intelligentResponses.performance[
+        Math.floor(Math.random() * intelligentResponses.performance.length)
+      ];
     }
     if (input.match(/(security|auth|protect|encrypt|sanitiz|csrf|xss)/)) {
-      return intelligentResponses.security[Math.floor(Math.random() * intelligentResponses.security.length)];
+      return intelligentResponses.security[
+        Math.floor(Math.random() * intelligentResponses.security.length)
+      ];
     }
     if (input.match(/(state|redux|zustand|context|store|global)/)) {
-      return intelligentResponses.state[Math.floor(Math.random() * intelligentResponses.state.length)];
+      return intelligentResponses.state[
+        Math.floor(Math.random() * intelligentResponses.state.length)
+      ];
     }
     if (input.match(/(responsive|mobile|tablet|breakpoint|grid|flexbox)/)) {
       return "Excellent! I'll create a **fully responsive design** using CSS Grid, Flexbox, and container queries. The layout will adapt beautifully across all screen sizes with touch-friendly interactions and optimal performance on mobile devices.";
@@ -125,9 +142,11 @@ const ChatInterface = () => {
     if (input.match(/(accessibility|a11y|wcag|screen reader|keyboard)/)) {
       return "Excellent priority! I'll ensure **full accessibility compliance** with WCAG 2.1 AA standards, proper ARIA labels, keyboard navigation, and screen reader support. Every user will have an exceptional experience.";
     }
-    
+
     // Fallback to general intelligent responses
-    return fallbackResponses[Math.floor(Math.random() * fallbackResponses.length)];
+    return fallbackResponses[
+      Math.floor(Math.random() * fallbackResponses.length)
+    ];
   };
 
   const handleSendMessage = () => {
@@ -155,15 +174,13 @@ const ChatInterface = () => {
         isTyping: true,
       };
       setMessages((prev) => [...prev, aiResponse]);
-      
+
       // Remove typing indicator after response is complete
       setTimeout(() => {
         setIsTyping(false);
-        setMessages((prev) => 
-          prev.map(msg => 
-            msg.id === aiResponse.id 
-              ? { ...msg, isTyping: false }
-              : msg
+        setMessages((prev) =>
+          prev.map((msg) =>
+            msg.id === aiResponse.id ? { ...msg, isTyping: false } : msg
           )
         );
       }, 2000);
@@ -185,8 +202,12 @@ const ChatInterface = () => {
           <Sparkles className="w-4 h-4 text-white" />
         </div>
         <div className="flex-1">
-          <h2 className="font-semibold text-foreground shimmer-text">AI Assistant</h2>
-          <p className="text-sm text-muted-foreground">Your intelligent coding partner</p>
+          <h2 className="font-semibold text-foreground shimmer-text">
+            AI Assistant
+          </h2>
+          <p className="text-sm text-muted-foreground">
+            Your intelligent coding partner
+          </p>
         </div>
         <div className="flex items-center gap-1">
           <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
@@ -232,10 +253,26 @@ const ChatInterface = () => {
                   {message.type === "ai" && message.isTyping ? (
                     <SmartResponse content={message.content} />
                   ) : (
+                    // <SmartResponse
+                    //   content={message.content}
+                    //   loop={false}
+                    //   onFinish={() =>
+                    //     setMessages((m) =>
+                    //       m.map((x) =>
+                    //         x.id === message.id ? { ...x, isTyping: false } : x
+                    //       )
+                    //     )
+                    //   }
+                    // />
                     <div className="text-sm leading-relaxed">
-                      {message.content.split('**').map((part, index) => 
+                      {message.content.split("**").map((part, index) =>
                         index % 2 === 1 ? (
-                          <span key={index} className="font-semibold text-gradient">{part}</span>
+                          <span
+                            key={index}
+                            className="font-semibold text-gradient"
+                          >
+                            {part}
+                          </span>
                         ) : (
                           <span key={index}>{part}</span>
                         )
@@ -243,13 +280,16 @@ const ChatInterface = () => {
                     </div>
                   )}
                   <div className="text-xs text-muted-foreground mt-2 opacity-60">
-                    {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                    {message.timestamp.toLocaleTimeString([], {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    })}
                   </div>
                 </div>
               </div>
             </div>
           ))}
-          
+
           {isTyping && <TypingIndicator />}
         </div>
       </ScrollArea>
@@ -284,7 +324,7 @@ const ChatInterface = () => {
             )}
           </Button>
         </div>
-        
+
         {/* Quick Actions */}
         <div className="flex gap-2 mt-3">
           <Button
