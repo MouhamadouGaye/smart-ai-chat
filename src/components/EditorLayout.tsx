@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { 
-  Sparkles, 
-  Settings, 
-  FileCode, 
-  Palette, 
+import {
+  Sparkles,
+  Settings,
+  FileCode,
+  Palette,
   Zap,
   Menu,
-  X
+  X,
 } from "lucide-react";
 import ChatInterface from "./ChatInterface";
 import CodePreview from "./CodePreview";
@@ -27,15 +27,22 @@ const EditorLayout = () => {
             onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
             className="lg:hidden"
           >
-            {sidebarCollapsed ? <Menu className="w-4 h-4" /> : <X className="w-4 h-4" />}
+            {sidebarCollapsed ? (
+              <Menu className="w-4 h-4" />
+            ) : (
+              <X className="w-4 h-4" />
+            )}
           </Button>
-          
+
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 gradient-ai rounded-lg flex items-center justify-center animate-glow">
               <Sparkles className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h1 className="font-bold text-lg text-gradient">AI Code Editor</h1>
+              <h1 className="font-bold text-lg text-gradient">
+                AI Code Editor
+              </h1>
+              <a href="http://localhost:5000/ai.html"> ai2</a>
             </div>
           </div>
         </div>
@@ -53,7 +60,11 @@ const EditorLayout = () => {
             <Settings className="w-4 h-4" />
           </Button>
           <Separator orientation="vertical" className="h-6" />
-          <Button variant="default" size="sm" className="gradient-ai shadow-ai gap-2">
+          <Button
+            variant="default"
+            size="sm"
+            className="gradient-ai shadow-ai gap-2"
+          >
             <Zap className="w-4 h-4" />
             <span className="hidden sm:inline">Upgrade</span>
           </Button>
@@ -63,7 +74,7 @@ const EditorLayout = () => {
       {/* Main Content */}
       <div className="flex h-[calc(100vh-3.5rem)]">
         {/* Chat Sidebar */}
-        <div 
+        <div
           className={`${
             sidebarCollapsed ? "w-0 lg:w-96" : "w-full lg:w-96"
           } transition-all duration-300 border-r border-ai-border-subtle flex-shrink-0 ${
@@ -76,7 +87,9 @@ const EditorLayout = () => {
         </div>
 
         {/* Code Preview Area */}
-        <div className={`flex-1 ${sidebarCollapsed ? "block" : "hidden lg:block"}`}>
+        <div
+          className={`flex-1 ${sidebarCollapsed ? "block" : "hidden lg:block"}`}
+        >
           <div className="h-full p-4">
             <CodePreview />
           </div>
